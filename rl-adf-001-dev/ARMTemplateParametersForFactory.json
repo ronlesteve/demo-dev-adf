@@ -8,10 +8,10 @@
 		"LS_AzureSqlDatabase_connectionString": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"LS_AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"LS_AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adls2dev.dfs.core.windows.net"
 		}
 	}
