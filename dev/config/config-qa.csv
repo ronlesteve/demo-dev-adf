@@ -3,3 +3,4 @@ linkedService, LS_AzureSqlDatabase, typeProperties.connectionString, "integrated
 linkedService, LS_AzureSqlDatabase, typeProperties.secretName, "ls-sql-akv-qa"
 linkedService, LS_AzureDataLakeStorage1, typeProperties.url, "https://adls2dev.dfs.core.windows.net"
 linkedService, LS_AzureDataLakeStorage1, typeProperties.secretName, "ls-adls2-akv-qa"
+linkedService, LS_AzureKeyVault, typeProperties.baseurl, "https://rl-kv-001-qa.vault.azure.net/"
