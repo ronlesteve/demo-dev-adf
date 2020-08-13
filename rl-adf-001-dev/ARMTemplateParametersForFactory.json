@@ -5,14 +5,17 @@
 		"factoryName": {
 			"value": "rl-adf-001-dev"
 		},
-		"LS_AzureSqlDatabase_connectionString": {
+		"LS_AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
-		"LS_AzureDataLakeStorage1_accountKey": {
+		"LS_AzureSqlDatabase_connectionString": {
 			"value": ""
 		},
 		"LS_AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adls2dev.dfs.core.windows.net"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://rl-kv-001-dev.vault.azure.net/"
 		}
 	}
 }
