@@ -11,7 +11,7 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_AzureSqlDatabase'"
 		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://rl-kv-001-dev.vault.azure.net/"
 		},
@@ -46,14 +46,14 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
+			"name": "[concat(parameters('factoryName'), '/LS_AzureKeyVault')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					"baseUrl": "[parameters('LS_AzureKeyVault_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
@@ -70,15 +70,16 @@
 					"accountKey": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
-							"referenceName": "AzureKeyVault1",
+							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "ls-adls2-akv-dev"
+						"secretName": "ls-adls2-akv-dev",
+						"secretVersion": "qaadmin"
 					}
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVault1')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureKeyVault')]"
 			]
 		},
 		{
@@ -93,7 +94,7 @@
 					"password": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
-							"referenceName": "AzureKeyVault1",
+							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
 						"secretName": "ls-sql-akv-dev"
@@ -101,25 +102,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVault1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AzureSqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSqlDatabase')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureKeyVault')]"
 			]
 		},
 		{
