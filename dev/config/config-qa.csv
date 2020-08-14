@@ -1,6 +1,4 @@
 type, name, path, value
 linkedService, LS_AzureSqlDatabase, typeProperties.connectionString, "integrated security=False;encrypt=True;connection timeout=30;data source=rl-sqlserver-001-qa.database.windows.net;initial catalog=rl-sql-001-qa;user id=qaadmin"
-linkedService, LS_AzureSqlDatabase, typeProperties.secretName, "ls-sql-akv-qa"
 linkedService, LS_AzureDataLakeStorage, typeProperties.url, "https://adls2qa.dfs.core.windows.net"
-linkedService, LS_AzureDataLakeStorage, typeProperties.secretName, "ls-adls2-akv-qa"
 linkedService, LS_AzureKeyVault, typeProperties.baseurl, "https://rl-kv-001-qa.vault.azure.net/"
