@@ -1,2 +1,2 @@
 type, name, path, value
-linkedService, LS_AzureSqlDatabase, typeProperties.connectionString, "integrated security=False;encrypt=True;connection timeout=30;data source=rl-sqlserver-001-qa.database.windows.net;initial catalog=rl-sql-001-qa;user id=qaadmin"
+linkedService, LS_AzureKeyVault, typeProperties.baseUrl, "https://rl-kv-001-qa.vault.azure.net/"
