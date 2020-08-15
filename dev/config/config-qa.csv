@@ -1,2 +1,5 @@
 type, name, path, value
 linkedService, LS_AzureKeyVault, typeProperties.baseUrl, "https://rl-kv-001-qa.vault.azure.net/"
+linkedService, LS_AzureSqlDatabase, typeProperties.secretName, "ls-sql-akv-qa"
+linkedService, LS_AzureDataLakeStorage, typeProperties.secretName, "ls-adls2-akv-qa"
+linkedService, LS_AzureDataLakeStorage, typeProperties.url, "https://adls2qa.dfs.core.windows.net"
