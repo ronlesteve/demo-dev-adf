@@ -7,17 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "rl-adf-001-dev"
 		},
-		"LS_AzureSqlDatabase_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_AzureSqlDatabase'"
-		},
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://rl-kv-001-dev.vault.azure.net/"
-		},
-		"LS_AzureDataLakeStorage_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adls2dev.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -25,7 +17,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/demopipeline')]",
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -40,8 +32,7 @@
 						}
 					}
 				],
-				"annotations": [],
-				"lastPublishTime": "2020-08-12T20:44:27Z"
+				"annotations": []
 			},
 			"dependsOn": []
 		},
@@ -57,95 +48,6 @@
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_AzureDataLakeStorage')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_AzureDataLakeStorage_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_AzureKeyVault",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "ls-adls2-akv-dev"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureKeyVault')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_AzureSqlDatabase')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('LS_AzureSqlDatabase_connectionString')]",
-					"password": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "LS_AzureKeyVault",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "ls-sql-akv-dev"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureKeyVault')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AzureSqlDatabase",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSqlDatabase')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AzureDataLakeStorage",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureDataLakeStorage')]"
-			]
 		}
 	]
 }

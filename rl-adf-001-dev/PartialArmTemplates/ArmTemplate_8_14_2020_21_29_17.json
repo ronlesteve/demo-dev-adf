@@ -6,10 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "rl-adf-001-dev"
-		},
-		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://rl-kv-001-dev.vault.azure.net/"
 		}
 	},
 	"variables": {
@@ -44,7 +40,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('LS_AzureKeyVault_properties_typeProperties_baseUrl')]"
+					"baseUrl": "https://rl-kv-001-dev.vault.azure.net/"
 				}
 			},
 			"dependsOn": []
