@@ -8,11 +8,11 @@
 		"LS_AzureSqlDatabase_connectionString": {
 			"value": ""
 		},
-		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
-			"value": "https://rl-kv-001-dev.vault.azure.net/"
-		},
 		"LS_AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://adls2dev.dfs.core.windows.net"
+		},
+		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://rl-kv-001-dev.vault.azure.net/"
 		}
 	}
 }

@@ -11,13 +11,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_AzureSqlDatabase'"
 		},
-		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://rl-kv-001-dev.vault.azure.net/"
-		},
 		"LS_AzureDataLakeStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adls2dev.dfs.core.windows.net"
+		},
+		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://rl-kv-001-dev.vault.azure.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -33,7 +33,7 @@
 	},
 	"resources": [
 		{
-			"name": "ArmTemplate_0",
+			"name": "rl-adf-001-dev_ArmTemplate_0",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2018-02-01",
 			"properties": {
