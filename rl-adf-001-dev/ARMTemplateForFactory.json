@@ -102,7 +102,7 @@
 							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "ls-adls2-akv-dev",
+						"secretName": "ls-adls2-akv",
 						"secretVersion": ""
 					}
 				}
@@ -139,7 +139,7 @@
 							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "ls-sql-akv-dev"
+						"secretName": "ls-sql-akv"
 					}
 				}
 			},
