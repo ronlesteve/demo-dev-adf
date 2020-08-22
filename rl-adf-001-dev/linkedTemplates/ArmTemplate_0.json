@@ -72,7 +72,8 @@
 							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "ls-adls2-akv-dev"
+						"secretName": "ls-adls2-akv-dev",
+						"secretVersion": ""
 					}
 				}
 			},
@@ -125,8 +126,7 @@
 						"frequency": "Month",
 						"interval": 1,
 						"startTime": "2020-08-22T02:44:00.000Z",
-						"timeZone": "UTC",
-						"schedule": {}
+						"timeZone": "UTC"
 					}
 				}
 			},

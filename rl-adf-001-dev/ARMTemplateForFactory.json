@@ -18,9 +18,6 @@
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://rl-kv-001-dev.vault.azure.net/"
-		},
-		"LS_AzureKeyVault_Secret_ADLS2": {
-			"value": "ls-adls2-akv-dev"
 		}
 	},
 	"variables": {
@@ -105,7 +102,8 @@
 							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "[parameters('LS_AzureKeyVault_Secret_ADLS2')]"
+						"secretName": "ls-adls2-akv-dev",
+						"secretVersion": ""
 					}
 				}
 			},
@@ -171,8 +169,7 @@
 						"frequency": "Month",
 						"interval": 1,
 						"startTime": "2020-08-22T02:44:00.000Z",
-						"timeZone": "UTC",
-						"schedule": {}
+						"timeZone": "UTC"
 					}
 				}
 			},
