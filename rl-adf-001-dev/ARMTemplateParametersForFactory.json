@@ -13,6 +13,9 @@
 		},
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://rl-kv-001-dev.vault.azure.net/"
+		},
+		"LS_AzureKeyVault_Secret_ADLS2": {
+			"value": "ls-adls2-akv-dev"
 		}
 	}
 }
